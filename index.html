@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiselect checkbox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="container px-4 mx-auto max-w-lg">
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full px-4 tabs">
+                <label for="GenderAllowed" class="cursor-pointer">Allowed Gender</label>
+                <div class="flex w-full">
+                    <div
+                        class="w-1/3 m-0.5 text-gray-700 border border-gray-200 rounded py-3 px-4 focus:border-default-color cursor-pointer" onclick="genderchecked('Male')">
+                        <input class="mt-1.5 mr-2 cursor-pointer" id="Male" type="checkbox" name="GenderAllowed" value="Male">
+                        <label  class="cursor-pointer">Male</label>
+                    </div>
+                    <div
+                        class="w-1/3 m-0.5 text-gray-700 border border-gray-200 rounded py-3 px-4 focus:border-default-color cursor-pointer" onclick="genderchecked('Female')">
+                        <input class="mt-1.5 mr-2 cursor-pointer" id="Female" type="checkbox" name="GenderAllowed" value="Female">
+                        <label  class="cursor-pointer">Female</label>
+                    </div>
+                    <div
+                        class="w-1/3 m-0.5 text-gray-700 border border-gray-200 rounded py-3 px-4 focus:border-default-color cursor-pointer" onclick="genderchecked('Other')">
+                        <input class="mt-1.5 mr-2 cursor-pointer" id="Other" type="checkbox" name="GenderAllowed" value="Other">
+                        <label  class="cursor-pointer">Other</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script>
+        function genderchecked(data) {
+            let check = document.getElementById(data);
+            if (check.checked == false){                
+                check.checked = true;  
+                check.addEventListener("click", function (){
+                    check.checked = true;
+                })              
+            }
+            else{
+                check.checked = false;
+                check.addEventListener("click", function (){
+                    check.checked = false;
+                })  
+            }
+        }
+    </script>
+</html>
